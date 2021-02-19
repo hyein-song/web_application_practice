@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block html_header %}
+    <script src="/static/js/posts.js"></script>
+{% endblock %}
+
+{% block html_body %}
+
+    <div class="container">
+        <h1>글 수정</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form post_form %}
+            <br>
+            <button type="submit"
+                    class="btn btn-primary">수정</button>
+            <button type="button"
+                    class="btn btn-warning"
+                    onclick="to_list()">리스트로 돌아가기</button>
+        </form>
+    </div>
+
+{% endblock %}

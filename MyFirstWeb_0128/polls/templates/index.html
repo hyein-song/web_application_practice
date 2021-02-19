@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{#    {%  %} : python 로직 #}
+{#     {{ 문자열로 표현되는 값 }} : 문자열 값 #}
+    {% if q_list %}  {# q_list 안에 뭐가 들어가 있으면 True #}
+        <ul>
+            {% for question in q_list  %}
+                <li><a href="/polls/{{ question.id }}">{{ question.question_text }}</a></li>
+            {% endfor  %}
+        </ul>
+    {% else %}
+        <h1> 데이터가 없어요~~!!</h1>
+    {% endif %}
+
+</body>
+</html>

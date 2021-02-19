@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% block html_header %}
+    <script src="/static/js/posts.js"></script>
+{% endblock %}
+
+{% block html_body %}
+
+    <div class="container">
+        <h1>New POST</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% bootstrap_form post_form %}
+            <br>
+            <button type="submit"
+                    class="btn btn-primary">등록</button>
+        </form>
+    </div>
+
+{% endblock %}

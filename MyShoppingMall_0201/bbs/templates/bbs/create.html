@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+{% block container %}
+
+    <div class ="container">
+        <h1>New POST</h1>
+        <form method="post">
+            {%  csrf_token %}
+            {% bootstrap_form post_form %}
+            <button type="submit"
+                    class = "brn btn-primary">등록</button>
+        </form>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block html_header %}
+    <script src="/static/js/posts.js"></script>
+{% endblock %}
+
+
+{% block html_body %}
+
+    <div class="container">
+        <h1>Bulletin Board System(BBS)</h1>
+        <button type="button"
+                class="btn btn-primary"
+                onclick="new_post()">새글작성</button>
+        <div class="m-1"></div>
+
+        <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>글 작성자</th>
+              <th>글 제목</th>
+              <th>작성일</th>
+              <th>삭제</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for post in post_list %}
+            <tr>
+              <td>{{ post.id }}</td>
+              <td>{{ post.author_name }}</td>
+              <td>{{ post.p_title }}</td>
+              <td>{{ post.p_date }}</td>
+              <td>삭제버튼</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+        </div>
+
+    </div>
+
+{%  endblock %}
